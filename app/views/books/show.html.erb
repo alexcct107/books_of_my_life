@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @book %>
+
+<% if @book.image.attached? %>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @book.image, style: "width: 200px; display: block"%>
+</p>
+<%end%>
+
+<div>
+  <%= link_to "Edit this book", edit_book_path(@book) %> |
+  <%= link_to "Back to books", books_path %>
+
+  <%= button_to "Destroy this book", @book, method: :delete %>
+</div>
