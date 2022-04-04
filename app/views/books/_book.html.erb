@@ -1,23 +1,26 @@
-<div id="<%= dom_id book %>">
+<div id="<%= dom_id book %>" class="img-fluid">
 
-  <p>
-    <strong>Name:</strong>
-    <%= book.name %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= book.author %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= book.comment %>
-  </p>
-
-  <p>
-    <strong>Reading Date:</strong>
-    <%= book.readingDate %>
-  </p>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+         
+            <%= image_tag(book.image, :class => "img-fluid rounded-start") %> 
+           
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="card-title"> <%= book.name %></h2>
+            <h3 class="card-title text-danger"> <%= book.author %></h3>
+            <p class="card-text"><%= book.comment %></p>
+            <strong class="card-text">Fecha de lectura: <%= book.readingDate %></strong>
+            <div class="card-text mt-5"><%= link_to "Mostrar este libro", book, :class => "btn btn-info"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </div>
+
+
+

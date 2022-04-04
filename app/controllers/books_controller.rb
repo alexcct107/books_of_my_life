@@ -22,7 +22,6 @@ class BooksController < ApplicationController
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)
-    
     respond_to do |format|
       if @book.save
         format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
@@ -65,6 +64,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:name, :author, :comment, :readingDate, :image)
+      params.require(:book).permit(:image, :name, :author, :comment, :readingDate)
     end
 end
