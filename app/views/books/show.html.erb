@@ -1,17 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
- <%= render @book %> 
-
-<!-- <% if @book.image.attached? %>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @book.image, style: "width: 200px; display: block"%>
-</p>
-<%end%> -->
+  <!-- <%= render @book %>  -->
 
 
-<div class="d-flex flex-column bd-highlight mb-3">
-  <div class="d-flex justify-content-around">
+  <div id="<%= dom_id @book %>">
+
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-2">
+         
+            <%= image_tag(@book.image, :class => "img-fluid rounded-start") %> 
+           
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="card-title"> <%= @book.name %></h2>
+            <h3 class="card-title text-danger"> <%= @book.author %></h3>
+            <p class="card-text"><%= @book.comment %></p>
+            <strong class="card-text">Fecha de lectura: <%= @book.readingDate %></strong>
+            <div class="card-text mt-5"> <%= link_to "Atrás", books_path, :class => "btn btn-dark" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="px-3 d-flex flex-column bd-highlight">
+  <div class="my-4 d-flex justify-content-around">
      <%= link_to "Editar Libro", edit_book_path(@book), :class => "btn btn-warning" %>
     <%= link_to "Ir a mis libros", books_path, :class => "btn btn-outline-primary" %>
     <%= button_to "Eliminar Libro", @book, method: :delete, class: 'btn btn-danger' %> 

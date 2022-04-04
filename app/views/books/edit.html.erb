@@ -4,7 +4,8 @@
 
 <br>
 
-<div>
-  <%= link_to "Mostrar este libro", @book %> |
-  <%= link_to "Ir a mis libros", books_path %>
+<div class="text-center mb-3 p-3">
+  <%= link_to "Atrás", @book, :class => "btn btn-dark"%>
+  <%= link_to "Ir a mis libros", books_path, :class => "btn btn-outline-primary" %>
+  
 </div>
