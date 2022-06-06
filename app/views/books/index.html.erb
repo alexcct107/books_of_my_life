@@ -1,11 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="text-center">Mis Libros</h1>
-
+<h1 class="text-center">Mis Libros</h1> <br>
+<%=paginate @books%>
+<br>
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
   <% end %>
 </div>
-
+<br>
+<%=paginate @books%>
+<br>
 
